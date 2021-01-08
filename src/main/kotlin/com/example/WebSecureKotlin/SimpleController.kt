@@ -7,18 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody
 @Controller
 class SimpleController {
     @RequestMapping("")
-    @ResponseBody
     fun index():String{
         return "home"
     }
     @RequestMapping("/home")
-    @ResponseBody
     fun home():String{
         return "home"
     }
 
     @RequestMapping("/login")
-    @ResponseBody
     fun login():String{
         return "login"
     }
