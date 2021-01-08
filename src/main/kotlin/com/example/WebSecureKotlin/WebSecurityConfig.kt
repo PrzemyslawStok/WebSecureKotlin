@@ -11,7 +11,17 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc
 class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         http?.let{
-
+            it.authorizeRequests()
+                .antMatchers("/","/home")
+                .permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                //.loginPage("/login")
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll()
         }
     }
 }
