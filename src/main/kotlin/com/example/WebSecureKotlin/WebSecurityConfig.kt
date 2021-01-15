@@ -13,7 +13,7 @@ class WebSecurityConfig : WebSecurityConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         http?.let{
             it.authorizeRequests()
-                .antMatchers("/","/home")
+                .antMatchers("/","/home","/info")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and()
